@@ -20,3 +20,9 @@ TITLE=`Markdown.pl $SOURCE | grep h1 | head -1 | sed -e 's/<[^>]*>//g'`
 if [ "$TITLE" ]; then
   sed -i '' -e "s/<title>.*<\/title>/<title>$TITLE<\/title>/i" $TARGET
 fi
+
+./Markdown.pl $SOURCE >> $TARGET
+
+cat footer.html >> $TARGET
+
+
